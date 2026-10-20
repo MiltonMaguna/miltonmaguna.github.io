@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milton Maguna — Senior Digital Compositor</title>
+  <meta name="description" content="Milton Maguna — Senior Digital Compositor for film, series and game cinematics. Demo reel, selected work and contact.">
+  <meta property="og:title" content="Milton Maguna — Senior Digital Compositor">
+  <meta property="og:description" content="Demo reel, game cinematics and film & series credits.">
+  <meta property="og:image" content="https://i.ytimg.com/vi/LZsVX038G90/maxresdefault.jpg">
+  <meta name="theme-color" content="#0a0a09">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a09'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Helvetica,Arial,sans-serif' font-weight='600' font-size='30' fill='%23ece7de'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span>Play</span></div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <a href="#top" class="brand" aria-label="Back to top">
+      <span class="brand-mark">M</span>
+      <span class="brand-name" data-field="name"></span>
+    </a>
+    <nav class="nav">
+      <a href="#cinematics">Cinematics</a>
+      <a href="#movies">Movies</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="socials">
+      <a class="social" data-href="imdb" target="_blank" rel="noopener" aria-label="IMDb">IMDb</a>
+      <a class="social" data-href="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    </div>
+  </header>
+
+  <!-- Hero / Reel -->
+  <section class="hero" id="top">
+    <div class="hero-media">
+      <img class="hero-poster" id="hero-poster" alt="">
+      <div class="hero-video" id="hero-video"></div>
+    </div>
+    <div class="hero-shade"></div>
+
+    <div class="hero-frame" aria-hidden="true">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow mono reveal"><span class="dot"></span><span data-field="role"></span><span class="hide-sm">&nbsp;— Film · Series · Game Cinematics</span></p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Milton</span></span>
+        <span class="line"><span class="word">Maguna</span></span>
+      </h1>
+      <button class="btn-reel reveal" id="play-reel" data-cursor="Play">
+        <span class="btn-reel-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
+        <span class="btn-reel-text">
+          <span class="mono small">Watch</span>
+          <span id="reel-title"></span>
+        </span>
+      </button>
+    </div>
+
+    <div class="hero-bar mono">
+      <span class="timecode" id="timecode">00:00:00:00</span>
+      <span class="hide-sm">23.976 fps · 2.39:1</span>
+      <a href="#cinematics" class="scroll-cue">Scroll <span class="scroll-line"></span></a>
+    </div>
+  </section>
+
+  <main>
+    <!-- Game Cinematics -->
+    <section class="section" id="cinematics">
+      <header class="section-head reveal">
+        <span class="mono num">01</span>
+        <h2>Game Cinematics</h2>
+        <span class="mono count" id="count-cinematics"></span>
+      </header>
+      <p class="section-note reveal" id="cine-note"></p>
+      <div class="cine-grid" id="cine-grid"></div>
+    </section>
+
+    <!-- Movies -->
+    <section class="section" id="movies">
+      <header class="section-head reveal">
+        <span class="mono num">02</span>
+        <h2>Movies</h2>
+        <span class="mono count" id="count-movies"></span>
+      </header>
+      <div class="filters reveal" role="tablist" aria-label="Filter credits">
+        <button class="filter is-active" data-filter="all">All</button>
+        <button class="filter" data-filter="Film">Films</button>
+        <button class="filter" data-filter="Series">Series</button>
+      </div>
+      <div class="poster-grid" id="poster-grid"></div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <header class="section-head reveal">
+        <span class="mono num">03</span>
+        <h2>About</h2>
+        <span class="mono count">Profile</span>
+      </header>
+      <div class="about-grid">
+        <p class="about-statement reveal" id="about-statement"></p>
+        <div class="about-body">
+          <div id="about-paragraphs"></div>
+          <dl class="stats reveal" id="stats"></dl>
+          <div class="about-lists reveal" id="about-lists"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <header class="section-head reveal">
+        <span class="mono num">04</span>
+        <h2>Contact</h2>
+        <span class="mono count">Available for projects</span>
+      </header>
+      <h3 class="contact-title reveal">Let’s make it<br><em>seamless.</em></h3>
+      <div class="contact-row reveal">
+        <a class="email" id="email"><span id="email-text"></span><span class="arrow">↗</span></a>
+        <button class="copy mono" id="copy-email">Copy</button>
+      </div>
+      <div class="contact-links reveal">
+        <a class="pill" data-href="linkedin" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+        <a class="pill" data-href="imdb" target="_blank" rel="noopener">IMDb <span>↗</span></a>
+        <a class="pill" id="cv" target="_blank" rel="noopener">Download CV <span>↓</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mono">
+    <span>© <span id="year"></span> <span data-field="name"></span></span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- Video modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="modal-top mono">
+      <span id="modal-title"></span>
+      <button class="modal-close" id="modal-close" aria-label="Close">Close <span>✕</span></button>
+    </div>
+    <div class="modal-player" id="modal-player"></div>
+  </div>
+
+  <script src="content.js?v=6"></script>
+  <script src="script.js?v=6"></script>
+</body>
+</html>
